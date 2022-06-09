@@ -1,0 +1,20 @@
+.grid-con {
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 150px;
+  grid-template-columns: repeat(auto-fill, 250px);
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+.item {
+  color: #fff;
+  text-align: center;
+  background: #000;
+  border-radius: 15px;
+  padding: 20px;
+}
+.item p {
+  font-size: 24px;
+}
