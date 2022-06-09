@@ -2,13 +2,14 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import Routes from "./routes/routes.js";
+import cors from "cors";
 
 dotenv.config();
 const app = express();
 
 //CONFIG JSON
 app.use(express.json());
-
+app.use(cors());
 //Coneccion a la base de datos
 const connect = async () => {
   await mongoose.connect(process.env.MONGODB);
@@ -35,4 +36,4 @@ app.use((error, req, res, next) => {
   });
 });
 
-app.listen(6000, console.log("Server On"));
+app.listen(process.env.PORT || 6000, console.log("Server On"));

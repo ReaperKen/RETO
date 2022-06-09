@@ -15,7 +15,7 @@ const Registrar = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post("/parking", {
+      await axios.post(process.env.REACT_APP_BACKURL + "parking", {
         placa: placa,
       });
       setOk(true);

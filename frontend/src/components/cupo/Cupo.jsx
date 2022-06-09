@@ -10,7 +10,9 @@ const Cupo = () => {
   useEffect(() => {
     setLoading(true);
     const getData = async () => {
-      const res = await axios.get("/parking/cupo/count");
+      const res = await axios.get(
+        process.env.REACT_APP_BACKURL + "parking/cupo/count"
+      );
       setData(res.data);
       setLoading(false);
     };

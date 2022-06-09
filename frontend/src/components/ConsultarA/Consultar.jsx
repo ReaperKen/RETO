@@ -13,7 +13,7 @@ const Consultar = () => {
     const getData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("/parking");
+        const res = await axios.get(process.env.REACT_APP_BACKURL + "parking");
         setData([...res.data]);
         setLoading(false);
       } catch (error) {

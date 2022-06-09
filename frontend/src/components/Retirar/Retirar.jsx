@@ -10,7 +10,9 @@ const Retirar = () => {
   useEffect(() => {
     setLoading(true);
     const getData = async () => {
-      const res = await axios.delete(`/parking/retirar/${placa}`);
+      const res = await axios.delete(
+        process.env.REACT_APP_BACKURL + `parking/retirar/${placa}`
+      );
       setData(res.data);
       setLoading(false);
     };

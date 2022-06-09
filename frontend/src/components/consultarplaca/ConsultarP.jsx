@@ -15,7 +15,9 @@ const ConsultarP = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.get(`/parking/${placa}`);
+      const res = await axios.get(
+        process.env.REACT_APP_BACKURL + `parking/${placa}`
+      );
       setData(res.data);
       setLoading(false);
     } catch (error) {
